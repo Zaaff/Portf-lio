@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=B612+Mono&family=Edu+NSW+ACT+Foundation&family=Mochiy+Pop+One&family=Open+Sans&family=Poppins&family=Roboto&family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width:1920px) {
+    body{
+        background-color: #0d192b;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .container{
+        width: 100%;
+    }
+    
+    #navegar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Roboto';
+        border-bottom: 1px solid #0c5149;
+
+    }
+    
+    #navegar button{
+        width: 80px;
+        height: 30px;
+        border: 1px solid transparent;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    
+    #navegar button:hover{
+        border: 1px solid #07f9a2;
+        transition-duration: 1s;
+    }
+    
+    #navegar nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        height: 50px;
+    }
+    
+    #navegar .logo img{
+        display: flex;
+        width: 100px;
+        height: 25px;
+    }
+    
+    #navegar .lista ul{
+        display: flex;
+        list-style: none;
+    }
+    
+    #navegar .lista ul li{
+        color:#07f9a2;
+        display: flex;
+        padding: 5px;
+    }
+    
+    #navegar ul li a{
+        color:#07f9a2;
+        text-decoration: none;
+    }
+    
+    #conteudo{
+        width: 100%;
+        height: 75vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-family: 'Roboto';
+        margin-top: 30px;
+        flex-direction: column;
+    }
+
+    .redes{
+        justify-content: center;
+        margin-top: 30px;
+        width: 80%;
+        display: flex;
+    }
+    
+    .link a{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-decoration: none;
+        color: #07f9a2;
+    }
+
+    .link label{
+        margin-top: 5px;
+    }
+
+    .git a{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-decoration: none;
+        color: #07f9a2;
+    }
+
+    .git label{
+        margin-top: 5px;
+    }
+
+    .email a{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-decoration: none;
+        color: #07f9a2;
+    }
+
+    .email label{
+        margin-top: 5px;
+    }
+
+
+    .whats a{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-decoration: none;
+        color: #07f9a2;
+    }
+
+    .whats label{
+        margin-top: 5px;
+    }
+
+    .redes img{
+        width: 50px;
+        height: 50px;
+        padding: 0;
+    }
+    
+
+    .redes ul{
+        display: flex;
+        list-style: none;
+        cursor: pointer;
+    }
+    
+    .redes ul li{
+        padding: 20px;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    
+}
+
+@media screen and (max-width:600px) {
+    
+}
