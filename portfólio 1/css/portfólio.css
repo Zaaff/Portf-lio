@@ -3,6 +3,7 @@
 *{
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 @media screen and (max-width:1920px) {
@@ -10,6 +11,7 @@
         background-color: #0d192b;
         display: flex;
         justify-content: center;
+        overflow-x: hidden;
     }
     
     .container{
@@ -50,6 +52,19 @@
         display: flex;
         width: 100px;
         height: 25px;
+    }
+
+    .mobile-menu{
+        display: none;
+        cursor: pointer;
+    }
+
+    .mobile-menu div{
+        width: 32px;
+        height: 2px;
+        background: #07f9a2;
+        margin: 8px;
+        transition: 0.3s;
     }
     
     #navegar .lista ul{
@@ -128,22 +143,21 @@
 
 @media screen and (max-width:600px) {
     body{
-        background-color: #0d192b;
-        display: flex;
-        justify-content: center;
+        overflow: hidden;
     }
     
     .container{
         width: 100%;
+        overflow-x: hidden;
     }
     
+
     #navegar{
         display: flex;
         justify-content: center;
         align-items: center;
         font-family: 'Roboto';
         border-bottom: 1px solid #0c5149;
-
     }
     
     #navegar button{
@@ -163,32 +177,76 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 80%;
+        width: 90%;
         height: 50px;
     }
     
-    #navegar .logo img{
+    #navegar  img{
         display: flex;
         width: 100px;
         height: 25px;
     }
     
-    #navegar .lista ul{
-        display: flex;
-        list-style: none;
+    .mobile-menu{
+        display: block;
+        margin-left: 50%;
+
+    }
+
+    .nav-list{
+        position: absolute;
+        width: 50vw;
+        height: 25vh;
+        top: 50px;
+        right: 0;
+        background-color: #0d192b;
+        border: 1px solid #0c5149;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-in;
+        
+    }
+
+    .nav-list.active{
+        transform: translateX(0);
+    }
+
+    .mobile-menu.active .line1{
+        transform: rotate(-45deg) translate(-8px, 8px);
+    }
+
+    .mobile-menu.active .line2{
+        opacity: 0;
+    }
+
+    .mobile-menu.active .line3{
+        transform: rotate(45deg) translate(-5px, -7px);
     }
     
-    #navegar .lista ul li{
-        color:#07f9a2;
-        display: flex;
-        padding: 5px;
+
+    @keyframes navLinkFade {
+        from{
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to{
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
     }
-    
+
+    .nav-list li{
+        margin-left: 0;
+    }
+
     #navegar ul li a{
         color:#07f9a2;
         text-decoration: none;
     }
-
 
     
     #conteudo{
@@ -240,3 +298,4 @@
         margin: 0;
     }
 }
+
