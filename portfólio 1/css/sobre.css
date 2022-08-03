@@ -145,51 +145,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width:1024px) {
     
 }
@@ -211,9 +166,11 @@
         align-items: center;
         font-family: 'Roboto';
         border-bottom: 1px solid #0c5149;
+
     }
     
     #navegar button{
+        display: none;
         width: 80px;
         height: 30px;
         border: 1px solid transparent;
@@ -222,11 +179,13 @@
     }
     
     #navegar button:hover{
+        display: none;
         border: 1px solid #07f9a2;
         transition-duration: 1s;
     }
     
     #navegar nav{
+        display: none;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -235,6 +194,7 @@
     }
     
     #navegar .logo img{
+        display: none;
         display: flex;
         width: 100px;
         height: 25px;
@@ -242,73 +202,102 @@
     
     #navegar .lista ul{
         display: none;
+        display: flex;
         list-style: none;
     }
     
     #navegar .lista ul li{
+        display: none;
         color:#07f9a2;
         display: flex;
         padding: 5px;
     }
     
     #navegar ul li a{
+        display: none;
         color:#07f9a2;
         text-decoration: none;
     }
     
+    .title h1{
+        text-align: center;
+        cursor: default;
+        color: #07f9a2;
+        font-size: 40px;
+        margin-top: 30px;
+    }
+
+
     #conteudo{
         width: 100%;
         height: 75vh;
         display: flex;
-        align-items: center;
         justify-content: center;
-        text-align: center;
-        font-family: 'Roboto';
-        margin-top: 30px;
+        align-items: center;
+        margin-top: 10px;
         flex-direction: column;
     }
     
-    
-    #conteudo .title h1{
-        color: #07f9a2;
-        font-size: 40px;
+
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 500px;
+        border-radius: 20px;
+        border: 1px solid #07f9a2;
+        box-shadow: 20px 20px 50px 50px #07f9a00e;
     }
-    
-    #conteudo .title label{
-        color: #09c184;
-        font-size: 20px;
+
+    .card .imagem{
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
-    
-    #conteudo .title h1:hover{
-        transition-duration: 2s;
-        font-size: 50px;
+
+    .card .imagem img{
+        width: 80%;
     }
-    
-    #conteudo .title label:hover{
-        transition-duration: 2s;
-        font-size: 25px;
+
+    .card .texto{
+        width: 310px;
+        font-size: 10px;
+        font-weight: 400;
+        font-family: 'Roboto';
+        margin-left: 0;
+        color: #ffffff;
+        margin-top: 5px;
     }
-    
-    .redes{
+
+    .botao{
+        display: flex;
         justify-content: center;
         margin-top: 20px;
-        display: flex;
+        
     }
-    
-    .redes img{
-        width: 20px;
-        height: 20px;
-        padding: 0;
-    }
-    
-    .redes ul{
-        display: flex;
-        list-style: none;
+
+    .botao button{
+        font-family: 'Roboto';
+        font-size: 15px;
+        color: #07f9a2;
+        width: 100px;
+        height: 30px;
+        border: 1px solid #07f9a2;
+        background-color: transparent;
         cursor: pointer;
     }
-    
-    .redes ul li{
-        padding: 15px;
-        margin: 0;
+
+    .botao button:hover{
+        font-family: 'Roboto';
+        font-size: 15px;
+        color: #0d192b;
+        width: 150px;
+        height: 50px;
+        border: 1px solid #0c5149;
+        background-color: #09c184;
+        transition-duration: 2s;
+        cursor: pointer;
     }
 }
