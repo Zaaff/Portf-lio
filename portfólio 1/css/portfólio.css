@@ -12,75 +12,46 @@
         display: flex;
         justify-content: center;
         overflow-x: hidden;
+        font-family: 'Roboto';
     }
     
     .container{
         width: 100%;
     }
     
-    #navegar{
+    #logo {
+        width: 7%;
+    }
+    
+    #header {
+        box-sizing: border-box;
+        height: 70px;
+        padding: 1rem;
         display: flex;
-        justify-content: center;
         align-items: center;
-        font-family: 'Roboto';
-        border-bottom: 1px solid #0c5149;
-
-    }
-    
-    #navegar button{
-        width: 80px;
-        height: 30px;
-        border: 1px solid transparent;
-        background-color: transparent;
-        cursor: pointer;
-    }
-    
-    #navegar button:hover{
-        border: 1px solid #07f9a2;
-        transition-duration: 1s;
-    }
-    
-    #navegar nav{
-        display: flex;
         justify-content: space-between;
-        align-items: center;
-        width: 80%;
-        height: 50px;
+        background: #0d192b;
+        border-bottom:1px solid #0c5149;
     }
     
-    #navegar .logo img{
-        display: flex;
-        width: 100px;
-        height: 25px;
-    }
-
-    .mobile-menu{
-        display: none;
-        cursor: pointer;
-    }
-
-    .mobile-menu div{
-        width: 32px;
-        height: 2px;
-        background: #07f9a2;
-        margin: 8px;
-        transition: 0.3s;
-    }
-    
-    #navegar .lista ul{
+    #menu {
         display: flex;
         list-style: none;
+        gap: 0.5rem;
     }
     
-    #navegar .lista ul li{
-        color:#07f9a2;
-        display: flex;
-        padding: 5px;
-    }
     
-    #navegar ul li a{
-        color:#07f9a2;
+    #menu a {
+        color: #09c184;
+        display: block;
+        padding: 0.5rem;
         text-decoration: none;
+        font-weight: bolder;
+    }
+    
+    #menu a:hover {
+        color: #07f9a2;
+        transition-duration: 0.3s;
     }
     
     #btn-mobile {
@@ -148,107 +119,80 @@
     
     .container{
         width: 100%;
-        overflow-x: hidden;
     }
     
+    #logo {
 
-    #navegar{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Roboto';
-        border-bottom: 1px solid #0c5149;
-    }
+        width: 20%;
+      }
     
-    #navegar button{
-        width: 80px;
-        height: 30px;
-        border: 1px solid transparent;
-        background-color: transparent;
-        cursor: pointer;
+      #menu {
+      display: block;
+      position: absolute;
+      width: 30%;
+      top: 70px;
+      right: 0px;
+      background: #0d192b;
+      transition: 0.6s;
+      z-index: 1000;
+      height: 0px;
+      visibility: hidden;
+      overflow-y: hidden;
+      text-align: center;
+      border-left:1px solid #0c5149;
+      border-bottom:1px solid #0c5149;
     }
-    
-    #navegar button:hover{
-        border: 1px solid #07f9a2;
-        transition-duration: 1s;
+  
+    #nav.active #menu {
+      height: 270px;
+      visibility: visible;
+      overflow-y: auto;
     }
-    
-    #navegar nav{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 90%;
-        height: 50px;
+  
+    #menu a {
+      padding: 1rem 0;
+      margin: 0 1rem;
+      border-bottom: 2px solid #0c5149;
     }
-    
-    #navegar  img{
-        display: flex;
-        width: 100px;
-        height: 25px;
+  
+    #btn-mobile {
+      display: flex;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      gap: 0.5rem;
+      color:#09c184;
     }
-    
-    .mobile-menu{
-        display: block;
-        margin-left: 50%;
-
+  
+    #hamburger {
+      border-top: 2px solid;
+      width: 20px;
     }
-
-    .nav-list{
-        position: absolute;
-        width: 50vw;
-        height: 25vh;
-        top: 50px;
-        right: 0;
-        background-color: #0d192b;
-        border: 1px solid #0c5149;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        transform: translateY(-150%);
-        transition: transform 0.3s ease-in;
-        
+  
+    #hamburger::after,
+    #hamburger::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      margin-top: 5px;
+      transition: 0.3s;
+      position: relative;
     }
-
-    .nav-list.active{
-        transform: translateX(0);
+    #nav.active #hamburger {
+      border-top-color: transparent;
     }
-
-    .mobile-menu.active .line1{
-        transform: rotate(-45deg) translate(-8px, 8px);
+    #nav.active #hamburger::before {
+      transform: rotate(135deg);
     }
-
-    .mobile-menu.active .line2{
-        opacity: 0;
+    #nav.active #hamburger::after {
+      transform: rotate(-135deg);
+      top: -7px;
     }
-
-    .mobile-menu.active .line3{
-        transform: rotate(45deg) translate(-5px, -7px);
-    }
-    
-
-    @keyframes navLinkFade {
-        from{
-            opacity: 0;
-            transform: translateX(50px);
-        }
-
-        to{
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-    }
-
-    .nav-list li{
-        margin-left: 0;
-    }
-
-    #navegar ul li a{
-        color:#07f9a2;
-        text-decoration: none;
-    }
-
-    
+   
     #conteudo{
         width: 100%;
         height: 75vh;
@@ -260,8 +204,7 @@
         margin-top: 30px;
         flex-direction: column;
     }
-    
-    
+
     #conteudo .title h1{
         cursor: default;
         color: #07f9a2;
@@ -272,8 +215,6 @@
         color: #09c184;
         font-size: 20px;
     }
-    
-    
     
     .redes{
         justify-content: center;
@@ -298,4 +239,3 @@
         margin: 0;
     }
 }
-

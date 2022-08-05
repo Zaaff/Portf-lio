@@ -17,70 +17,57 @@
         width: 100%;
     }
     
-    #navegar{
+    #logo {
+        width: 7%;
+    }
+    
+    #header {
+        box-sizing: border-box;
+        height: 70px;
+        padding: 1rem;
         display: flex;
-        justify-content: center;
         align-items: center;
-        font-family: 'Roboto';
-        border-bottom: 1px solid #0c5149;
-
-    }
-    
-    #navegar button{
-        width: 80px;
-        height: 30px;
-        border: 1px solid transparent;
-        background-color: transparent;
-        cursor: pointer;
-    }
-    
-    #navegar button:hover{
-        border: 1px solid #07f9a2;
-        transition-duration: 1s;
-    }
-    
-    #navegar nav{
-        display: flex;
         justify-content: space-between;
-        align-items: center;
-        width: 80%;
-        height: 50px;
+        background: #0d192b;
+        border-bottom:1px solid #0c5149;
     }
     
-    #navegar .logo img{
-        display: flex;
-        width: 100px;
-        height: 25px;
-    }
-    
-    .mobile-menu{
-        display: none;
-        cursor: pointer;
-    }
-
-    .mobile-menu div{
-        width: 32px;
-        height: 2px;
-        background: #07f9a2;
-        margin: 8px;
-        transition: 0.3s;
-    }
-
-    #navegar .lista ul{
+    #menu {
         display: flex;
         list-style: none;
+        gap: 0.5rem;
     }
     
-    #navegar .lista ul li{
-        color:#07f9a2;
-        display: flex;
-        padding: 5px;
-    }
     
-    #navegar ul li a{
-        color:#07f9a2;
+    #menu a {
+        color: #09c184;
+        display: block;
+        padding: 0.5rem;
         text-decoration: none;
+        font-weight: bolder;
     }
+    
+    #menu a:hover {
+        color: #07f9a2;
+        transition-duration: 0.3s;
+    }
+    
+    #btn-mobile {
+        display: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     .title h1{
         text-align: center;
@@ -157,119 +144,87 @@
 
 }
 
-
 @media screen and (max-width:1024px) {
-    
-}
-
-@media screen and (max-width:600px) {
     body{
         background-color: #0d192b;
         display: flex;
         justify-content: center;
+        overflow-x: hidden;
     }
     
     .container{
         width: 100%;
     }
     
-    #navegar{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Roboto';
-        border-bottom: 1px solid #0c5149;
-    }
+    #logo {
+        width: 15%;
+      }
     
-    #navegar button{
-        width: 80px;
-        height: 30px;
-        border: 1px solid transparent;
-        background-color: transparent;
-        cursor: pointer;
+      #menu {
+      display: block;
+      position: absolute;
+      width: 30%;
+      top: 50px;
+      right: 0px;
+      background: #0d192b;
+      transition: 0.6s;
+      z-index: 1000;
+      height: 0px;
+      visibility: hidden;
+      overflow-y: hidden;
+      text-align: center;
+      border-left:1px solid #0c5149;
+      border-bottom:1px solid #0c5149;
     }
-    
-    #navegar button:hover{
-        border: 1px solid #07f9a2;
-        transition-duration: 1s;
+  
+    #nav.active #menu {
+      height: 270px;
+      visibility: visible;
+      overflow-y: auto;
     }
-    
-    #navegar nav{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 90%;
-        height: 50px;
+  
+    #menu a {
+      padding: 1rem 0;
+      margin: 0 1rem;
+      border-bottom: 2px solid #0c5149;
     }
-    
-    #navegar  img{
-        display: flex;
-        width: 100px;
-        height: 25px;
+  
+    #btn-mobile {
+      display: flex;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      gap: 0.5rem;
+      color:#09c184;
     }
-    
-    .mobile-menu{
-        display: block;
-        margin-left: 50%;
-
+  
+    #hamburger {
+      border-top: 2px solid;
+      width: 20px;
     }
-
-    .nav-list{
-        position: absolute;
-        width: 20vw;
-        height: 18vh;
-        top: 50px;
-        right: 0;
-        background-color: #0d192b;
-        border-left: 1px solid #0c5149;
-        border-right: 1px solid #0c5149;
-        border-bottom: 1px solid #0c5149;
-        border-top: 1px solid #0c5149;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        transform: translateY(-160%);
-        transition: transform 0.3s ease-in;
-        
+  
+    #hamburger::after,
+    #hamburger::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      margin-top: 5px;
+      transition: 0.3s;
+      position: relative;
     }
-
-    .nav-list.active{
-        transform: translateX(0);
+    #nav.active #hamburger {
+      border-top-color: transparent;
     }
-
-    .mobile-menu.active .line1{
-        transform: rotate(-45deg) translate(-8px, 8px);
+    #nav.active #hamburger::before {
+      transform: rotate(135deg);
     }
-
-    .mobile-menu.active .line2{
-        opacity: 0;
-    }
-
-    .mobile-menu.active .line3{
-        transform: rotate(45deg) translate(-5px, -7px);
-    }
-    
-
-    @keyframes navLinkFade {
-        from{
-            opacity: 0;
-            transform: translateX(50px);
-        }
-
-        to{
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-    }
-
-    .nav-list li{
-        margin-left: 0;
-    }
-
-    #navegar ul li a{
-        color:#07f9a2;
-        text-decoration: none;
+    #nav.active #hamburger::after {
+      transform: rotate(-135deg);
+      top: -7px;
     }
 
     
@@ -295,7 +250,6 @@
 
     .card{
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 80%;
@@ -306,7 +260,7 @@
     }
 
     .card .imagem{
-        width: 100%;
+        width: 50%;
         display: flex;
         justify-content: center;
     }
@@ -317,7 +271,7 @@
 
     .card .texto{
         width: 310px;
-        font-size: 10px;
+        font-size: 15px;
         font-weight: 400;
         font-family: 'Roboto';
         margin-left: 0;
@@ -355,3 +309,334 @@
         cursor: pointer;
     }
 }
+
+@media screen and (max-width:600px){
+    body{
+        background-color: #0d192b;
+        display: flex;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+    
+    .container{
+        width: 100%;
+    }
+
+    #logo {
+        width: 20%;
+      }
+    
+      #menu {
+      display: block;
+      position: absolute;
+      width: 30%;
+      top: 70px;
+      right: 0px;
+      background: #0d192b;
+      transition: 0.6s;
+      z-index: 1000;
+      height: 0px;
+      visibility: hidden;
+      overflow-y: hidden;
+      text-align: center;
+      border-left:1px solid #0c5149;
+      border-bottom:1px solid #0c5149;
+    }
+  
+    #nav.active #menu {
+      height: 270px;
+      visibility: visible;
+      overflow-y: auto;
+    }
+  
+    #menu a {
+      padding: 1rem 0;
+      margin: 0 1rem;
+      border-bottom: 2px solid #0c5149;
+    }
+  
+    #btn-mobile {
+      display: flex;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      gap: 0.5rem;
+      color:#09c184;
+    }
+  
+    #hamburger {
+      border-top: 2px solid;
+      width: 20px;
+    }
+  
+    #hamburger::after,
+    #hamburger::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      margin-top: 5px;
+      transition: 0.3s;
+      position: relative;
+    }
+    #nav.active #hamburger {
+      transform: rotate(135deg);
+      
+    }
+    #nav.active #hamburger::before {
+      border-top-color: transparent;
+    }
+    #nav.active #hamburger::after {
+      transform: rotate(-135deg);
+      top: -7px;
+    }
+
+    
+    .title h1{
+        text-align: center;
+        cursor: default;
+        color: #07f9a2;
+        font-size: 40px;
+        margin-top: 30px;
+    }
+
+
+    #conteudo{
+        width: 100%;
+        height: 75vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        flex-direction: column;
+    }
+    
+
+    .card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        flex-direction: column;
+        height: 700px;
+        border-radius: 20px;
+        border: 1px solid #07f9a2;
+        box-shadow: 20px 20px 50px 50px #07f9a00e;
+    }
+
+    .card .imagem{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card .texto{
+        width: 90%;
+        font-size: 15px;
+        font-weight: 400;
+        font-family: 'Roboto';
+        margin-left: 0;
+        color: #ffffff;
+        margin-top: 15px;
+    }
+
+    .botao{
+        display: flex;
+        justify-content: center;
+        margin-top: 35px;
+        
+    }
+
+    .botao button{
+        font-family: 'Roboto';
+        font-size: 15px;
+        color: #07f9a2;
+        width: 150px;
+        height: 50px;
+        border: 1px solid #07f9a2;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .botao button:hover{
+        font-family: 'Roboto';
+        font-size: 15px;
+        color: #0d192b;
+        width: 150px;
+        height: 50px;
+        border: 1px solid #0c5149;
+        background-color: #09c184;
+        transition-duration: 2s;
+        cursor: pointer;
+    } 
+}
+
+/* @media screen and (max-width:400px){
+    body{
+        background-color: #0d192b;
+        display: flex;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+    
+    .container{
+        width: 100%;
+    }
+    
+    #logo {
+        width: 15%;
+      }
+    
+      #menu {
+      display: block;
+      position: absolute;
+      width: 30%;
+      top: 50px;
+      right: 0px;
+      background: #0d192b;
+      transition: 0.6s;
+      z-index: 1000;
+      height: 0px;
+      visibility: hidden;
+      overflow-y: hidden;
+      text-align: center;
+      border-left:1px solid #0c5149;
+      border-bottom:1px solid #0c5149;
+    }
+  
+    #nav.active #menu {
+      height: 270px;
+      visibility: visible;
+      overflow-y: auto;
+    }
+  
+    #menu a {
+      padding: 1rem 0;
+      margin: 0 1rem;
+      border-bottom: 2px solid #0c5149;
+    }
+  
+    #btn-mobile {
+      display: flex;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      gap: 0.5rem;
+      color:#09c184;
+    }
+  
+    #hamburger {
+      border-top: 2px solid;
+      width: 20px;
+    }
+  
+    #hamburger::after,
+    #hamburger::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: currentColor;
+      margin-top: 5px;
+      transition: 0.3s;
+      position: relative;
+    }
+    #nav.active #hamburger {
+      border-top-color: transparent;
+    }
+    #nav.active #hamburger::before {
+      transform: rotate(135deg);
+    }
+    #nav.active #hamburger::after {
+      transform: rotate(-135deg);
+      top: -7px;
+    }
+
+    
+    .title h1{
+        text-align: center;
+        cursor: default;
+        color: #07f9a2;
+        font-size: 40px;
+        margin-top: 30px;
+    }
+
+
+    #conteudo{
+        width: 100%;
+        height: 75vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        flex-direction: column;
+    }
+    
+
+    .card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        flex-direction: column;
+        height: 700px;
+        border-radius: 20px;
+        border: 1px solid #07f9a2;
+        box-shadow: 20px 20px 50px 50px #07f9a00e;
+    }
+
+    .card .imagem{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card .imagem img{
+        width: 90%;
+    }
+
+    .card .texto{
+        width: 80%;
+        font-size: 10px;
+        font-weight: 400;
+        font-family: 'Roboto';
+        margin-left: 0;
+        color: #ffffff;
+        margin-top: 5px;
+    }
+
+    .botao{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        
+    }
+
+    .botao button{
+        font-family: 'Roboto';
+        font-size: 15px;
+        color: #07f9a2;
+        width: 110%;
+        height: 30px;
+        border: 1px solid #07f9a2;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .botao button:hover{
+        font-family: 'Roboto';
+        font-size: 15px;
+        color: #0d192b;
+        width: 150px;
+        height: 50px;
+        border: 1px solid #0c5149;
+        background-color: #09c184;
+        transition-duration: 2s;
+        cursor: pointer;
+    } 
+} */

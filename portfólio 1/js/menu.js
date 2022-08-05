@@ -1,46 +1,31 @@
-class MobileNavBar{
-  constructor(mobileMenu, navList, navLinks){
-    this.mobileMenu = document.querySelector(mobileMenu);
-    this.navList = document.querySelector(navList);
-    this.navLinks = document.querySelectorAll(navLinks);
-    this.activeClass = "active";
+const btnMobile = document.getElementById('btn-mobile');
 
-    this.handleClick = this.handleClick.bind(this);
-
-  }
-
-  animateLinks(){
-    this.navLinks.forEach((link, index)=>{
-      link.style.animation
-        ?(link.style.animation = "")
-        :(link.style.animation = `navLinkFade 0.5s ease fowards 0.3s`);
-    });
-
-  }
-
-
-  handleClick(){
-    this.navList.classList.toggle(this.activeClass);
-    this.mobileMenu.classList.toggle(this.activeClass);
-    this.animateLinks();
-  }
-  
-  addClickEvent(){
-    this.mobileMenu.addEventListener("click", this.handleClick);
-  }
-
-  init(){
-    if(this.mobileMenu){
-      this.addClickEvent();
-    }
-    return this;
+function toggleMenu(event) {
+  if (event.type === 'touchstart') event.preventDefault();
+  const nav = document.getElementById('nav');
+  nav.classList.toggle('active');
+  const active = nav.classList.contains('active');
+  event.currentTarget.setAttribute('aria-expanded', active);
+  if (active) {
+    event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+  } else {
+    event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
   }
 }
 
-const mobileNavBar = new MobileNavBar(
-  ".mobile-menu",
-  ".nav-list",
-  ".nav-list li",
-);
+btnMobile.addEventListener('click', toggleMenu);
+btnMobile.addEventListener('touchstart', toggleMenu);
 
-mobileNavBar.init();
+function logar(){
+
+  var email = document.getElementById('email').value;
+  var senha = document.getElementById('senha').value;
+
+  if(email == 'admin' && senha == 'admin'){
+    alert('sucesso');
+    location.href = 'unifort1.html';
+  }else{
+    alert('Usuário incorreto');
+  }
+}
+
