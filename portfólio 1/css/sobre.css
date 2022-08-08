@@ -383,11 +383,10 @@
       position: relative;
     }
     #nav.active #hamburger {
-      transform: rotate(135deg);
-      
+      border-top-color: transparent;
     }
     #nav.active #hamburger::before {
-      border-top-color: transparent;
+      transform: rotate(135deg);
     }
     #nav.active #hamburger::after {
       transform: rotate(-135deg);
